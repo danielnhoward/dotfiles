@@ -1,19 +1,25 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  config,
+  inputs,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Bootloader.
-  boot.loader = {
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  /*
+    boot.loader = {
     efi = {
       canTouchEfiVariables = true;
       efiSysMountPoint = "/boot/efi"; # ← use the same mount point here.
@@ -22,19 +28,20 @@
       efiSupport = true;
       #efiInstallAsRemovable = true; # in case canTouchEfiVariables doesn't work for your system
       device = "nodev";
-      theme = pkgs.stdenv.mkDerivation {
-        pname = "distro-grub-themes";
-        version = "3.1";
-        src = pkgs.fetchFromGitHub {
-          owner = "AdisonCavani";
-          repo = "distro-grub-themes";
-          rev = "v3.1";
-          hash = "sha256-ZcoGbbOMDDwjLhsvs77C7G7vINQnprdfI37a9ccrmPs=";
-        };
-        installPhase = "cp -r customize/nixos $out";
-      };
+      # theme = pkgs.stdenv.mkDerivation {
+      #   pname = "distro-grub-themes";
+      #   version = "3.1";
+      #   src = pkgs.fetchFromGitHub {
+      #     owner = "AdisonCavani";
+      #     repo = "distro-grub-themes";
+      #     rev = "v3.1";
+      #     hash = "sha256-ZcoGbbOMDDwjLhsvs77C7G7vINQnprdfI37a9ccrmPs=";
+      #   };
+      #   installPhase = "cp -r customize/nixos $out";
+      # };
     };
   };
+  */
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -108,17 +115,26 @@
   users.users.dnh = {
     isNormalUser = true;
     description = "dnh";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
+    shell = pkgs.zsh;
     packages = with pkgs; [
       kdePackages.kate
       vscode
       nil
       git
       spotify
-      comma
       gnumake
     ];
   };
+
+  programs.zsh.enable = true;
+
+  programs.nix-index.enable = true;
+  programs.nix-index-database.comma.enable = true;
+
+  networking.extraHosts = ''
+    127.0.0.1 local.danielhoward.me
+  '';
 
   virtualisation.docker = {
     enable = true;
@@ -129,10 +145,15 @@
   };
 
   programs.bash.shellAliases = {
-    update  = "sudo nixos-rebuild switch --flake ~/nixos#default";
+    update = "sudo nixos-rebuild switch --flake ~/nixos#default";
   };
 
-  programs.command-not-found.enable = true;
+  nix.gc = {
+    automatic = true;
+    persistent = true;
+    dates = "weekly";
+    options = "--delete-older-than 10d";
+  };
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -143,9 +164,18 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
   ];
+
+  home-manager = {
+    extraSpecialArgs = {inherit inputs;};
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users = {
+      dnh = ./home.nix;
+    };
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -173,5 +203,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }
