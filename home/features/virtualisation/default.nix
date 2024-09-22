@@ -1,11 +1,8 @@
-{
-  pkgs,
-  ...
-}: {
-  home.packages = (with pkgs; [
+{pkgs, ...}: {
+  home.packages = with pkgs; [
     qemu
     virt-manager
-  ]);
+  ];
 
   dconf.settings = {
     "org/virt-manager/virt-manager/connections" = {

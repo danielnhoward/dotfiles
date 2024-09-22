@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   users.users.dnh = {
     isNormalUser = true;
     description = "Daniel Howard";
