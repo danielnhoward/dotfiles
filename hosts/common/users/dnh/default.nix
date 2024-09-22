@@ -6,7 +6,7 @@
     isNormalUser = true;
     description = "Daniel Howard";
     extraGroups = ["networkmanager" "wheel"];
-#    shell = pkgs.zsh;
+    shell = pkgs.zsh;
     home = "/home/dnh";
   };
 }

@@ -30,5 +30,7 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
+  programs.zsh.enable = true;
+
   system.stateVersion = "24.05";
 }
