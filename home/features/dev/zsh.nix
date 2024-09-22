@@ -10,7 +10,7 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      update = "sudo nixos-rebuild switch --flake ~/nixos#pleco";
+      update = "sudo nixos-rebuild switch --flake ~/nixos#$HOST";
     };
     history = {
       size = 10000;

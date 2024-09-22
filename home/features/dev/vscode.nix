@@ -12,6 +12,8 @@
     ];
 
     userSettings.editor.formatOnSave = true;
+    userSettings.editor.cursorSmoothCaretAnimation = "on";
+    userSettings.editor.cursorBlinking = "smooth";
 
     userSettings.files.insertFinalNewLine = true;
     userSettings.files.trimTrailingWhitespace = true;

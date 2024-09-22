@@ -1,0 +1,3 @@
+{...}: {
+  programs.gnumake.enable = true;
+}
