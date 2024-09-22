@@ -3,6 +3,8 @@
   ...
 }: {
   imports = [
+    ./gc.nix
+    ./hosts.nix
     ./locale.nix
     ./nix.nix
   ];
@@ -30,7 +32,22 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
+  services.fprintd.enable = true;
+
   programs.zsh.enable = true;
+
+  virtualisation.libvirtd.enable = true;
+
+  virtualisation.docker = {
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
+
+  programs.nix-index.enable = true;
+  programs.nix-index-database.comma.enable = true;
 
   system.stateVersion = "24.05";
 }
