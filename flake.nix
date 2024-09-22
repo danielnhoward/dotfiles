@@ -1,14 +1,24 @@
 {
-  description = "Nixos config flake";
+  description = "NixOS config";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    nix-index-database.url = "github:nix-community/nix-index-database";
-    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
   outputs = {
@@ -16,17 +26,25 @@
     nixpkgs,
     ...
   } @ inputs: let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
+    makeSystem = user: host: system:
+      nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/${host}
+          inputs.nix-index-database.nixosModules.nix-index
+          inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.sharedModules = [inputs.plasma-manager.homeManagerModules.plasma-manager];
+            home-manager.users.${user} = import ./home/${user}/${host}.nix;
+          }
+        ];
+      };
   in {
-    formatter.${system} = pkgs.alejandra;
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./configuration.nix
-        inputs.nix-index-database.nixosModules.nix-index
-        inputs.home-manager.nixosModules.home-manager
-      ];
+    formatter."x86_64-linux" = nixpkgs.legacyPackages."x86_64-linux".alejandra;
+
+    nixosConfigurations = {
+      pleco = makeSystem "dnh" "pleco" "x86_64-linux";
     };
   };
 }
