@@ -5,10 +5,10 @@
       efiSupport = true;
       device = "nodev";
     };
-  };
-
-  distro-grub-themes = {
-    enable = true;
-    theme = "nixos";
+    grub2-theme = {
+      enable = true;
+      theme = "stylish";
+      footer = true;
+    };
   };
 }

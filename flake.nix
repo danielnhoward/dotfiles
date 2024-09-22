@@ -20,8 +20,8 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    distro-grub-themes = {
-      url = "github:AdisonCavani/distro-grub-themes";
+    grub2-themes = {
+      url = "github:vinceliuice/grub2-themes";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -43,7 +43,7 @@
             home-manager.sharedModules = [inputs.plasma-manager.homeManagerModules.plasma-manager];
             home-manager.users.${user} = import ./home/${user}/${host}.nix;
           }
-          inputs.distro-grub-themes.nixosModules.${system}.default
+          inputs.grub2-themes.nixosModules.default
         ];
       };
   in {
