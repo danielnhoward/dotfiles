@@ -1,5 +1,6 @@
-{pkgs, ...}: {
+{...}: {
   imports = [
+    ./boot.nix
     ./gc.nix
     ./hosts.nix
     ./locale.nix
@@ -9,9 +10,6 @@
   nixpkgs.config.allowUnfree = true;
 
   networking.networkmanager.enable = true;
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   console.keyMap = "uk";
 

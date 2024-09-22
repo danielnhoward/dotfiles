@@ -1,3 +1,5 @@
-{...}: {
-  programs.gnumake.enable = true;
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    gnumake
+  ];
 }
