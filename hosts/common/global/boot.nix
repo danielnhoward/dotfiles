@@ -9,6 +9,7 @@
       enable = true;
       theme = "stylish";
       footer = true;
+      customResolution = "2880x1620";
     };
   };
 }

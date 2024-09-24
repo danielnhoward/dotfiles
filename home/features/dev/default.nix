@@ -1,5 +1,6 @@
 {...}: {
   imports = [
+    ./cloudflared.nix
     ./git.nix
     ./gnumake.nix
     ./kitty.nix
