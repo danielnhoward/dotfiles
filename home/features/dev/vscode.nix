@@ -9,6 +9,8 @@
       zhuangtongfa.material-theme
 
       jnoortheen.nix-ide
+      haskell.haskell
+      justusadam.language-haskell
     ];
 
     userSettings.editor.formatOnSave = true;
