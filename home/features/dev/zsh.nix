@@ -17,6 +17,16 @@
       path = "${config.xdg.dataHome}/zsh/history";
     };
 
+    initExtra = ''
+      tunnel() {
+        if [[ "$1" == "" ]]; then
+          echo "Usage: tunnel port"
+          return 1
+        fi
+        cloudflared tunnel run --url=http://localhost:$1 $HOST
+      }
+    '';
+
     plugins = [
       {
         name = "powerlevel10k";
