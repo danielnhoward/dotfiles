@@ -20,6 +20,8 @@
     userSettings.files.insertFinalNewLine = true;
     userSettings.files.trimTrailingWhitespace = true;
 
+    userSettings.terminal.external.linuxExec = "kitty";
+
     userSettings.workbench.startupEditor = "none";
     userSettings.workbench.iconTheme = "material-icon-theme";
     userSettings.workbench.colorTheme = "One Dark Pro";
