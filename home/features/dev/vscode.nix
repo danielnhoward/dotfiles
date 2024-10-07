@@ -30,5 +30,7 @@
     userSettings.nix.serverPath = "${pkgs.nil}/bin/nil";
     userSettings.nix.formatterPath = "${pkgs.alejandra}/bin/alejandra";
     userSettings.nix.serverSettings.nil.formatting.command = ["alejandra"];
+
+    userSettings."[haskell]"."editor.formatOnSave" = false;
   };
 }
