@@ -32,6 +32,9 @@
     userSettings.nix.formatterPath = "${pkgs.alejandra}/bin/alejandra";
     userSettings.nix.serverSettings.nil.formatting.command = ["alejandra"];
 
-    userSettings."[haskell]"."editor.formatOnSave" = false;
+    userSettings."[haskell]" = {
+      "editor.formatOnSave" = false;
+      "editor.tabSize" = 2;
+    };
   };
 }
