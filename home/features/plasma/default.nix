@@ -1,4 +1,8 @@
 {...}: {
+  imports = [
+    ./clock.nix
+  ];
+
   programs.plasma = {
     enable = true;
 
