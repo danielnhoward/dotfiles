@@ -1,8 +1,4 @@
-{...}: {
-  imports = [
-    ./clock.nix
-  ];
-
+{pkgs, ...}: {
   programs.plasma = {
     enable = true;
 
@@ -12,4 +8,9 @@
       command = "kitty";
     };
   };
+
+  home.packages = with pkgs.kdePackages; [
+    kclock
+    kalk
+  ];
 }
