@@ -8,6 +8,8 @@
       pkief.material-icon-theme
       zhuangtongfa.material-theme
 
+      ms-vsliveshare.vsliveshare
+
       jnoortheen.nix-ide
       haskell.haskell
       justusadam.language-haskell
