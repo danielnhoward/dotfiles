@@ -11,6 +11,7 @@
 
     shellAliases = {
       update = "sudo nixos-rebuild switch --flake ~/nixos#$HOST";
+      ssh = "ssh -o addKeysToAgent=yes";
     };
     history = {
       size = 10000;

@@ -44,5 +44,7 @@
   programs.nix-index.enable = true;
   programs.nix-index-database.comma.enable = true;
 
+  programs.ssh.startAgent = true;
+
   system.stateVersion = "24.05";
 }
