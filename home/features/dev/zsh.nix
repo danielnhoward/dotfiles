@@ -19,6 +19,9 @@
     };
 
     initExtra = ''
+      bindkey "^[[1;5D" backward-word
+      bindkey "^[[1;5C" forward-word
+
       tunnel() {
         if [[ "$1" == "" ]]; then
           echo "Usage: tunnel port"
