@@ -31,6 +31,7 @@
     nixpkgs,
     ...
   } @ inputs: let
+    pkgs = nixpkgs.legacyPackages."x86_64-linux";
     makeSystem = user: host: system:
       nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
@@ -47,7 +48,7 @@
         ];
       };
   in {
-    formatter."x86_64-linux" = nixpkgs.legacyPackages."x86_64-linux".alejandra;
+    formatter."x86_64-linux" = pkgs.alejandra;
 
     nixosConfigurations = {
       pleco = makeSystem "dnh" "pleco" "x86_64-linux";
