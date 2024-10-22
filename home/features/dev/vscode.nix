@@ -15,28 +15,41 @@
       justusadam.language-haskell
     ];
 
-    userSettings.editor.formatOnSave = true;
-    userSettings.editor.cursorSmoothCaretAnimation = "on";
-    userSettings.editor.cursorBlinking = "smooth";
-    userSettings.editor.selectionClipboard = false;
+    userSettings = {
+      editor = {
+        formatOnSave = true;
+        cursorSmoothCaretAnimation = "on";
+        cursorBlinking = "smooth";
+        selectionClipboard = false;
+      };
 
-    userSettings.files.insertFinalNewLine = true;
-    userSettings.files.trimTrailingWhitespace = true;
+      files = {
+        insertFinalNewLine = true;
+        trimTrailingWhitespace = true;
+      };
 
-    userSettings.terminal.external.linuxExec = "kitty";
+      terminal = {
+        explorerKind = "external";
+        external.linuxExec = "kitty";
+      };
 
-    userSettings.workbench.startupEditor = "none";
-    userSettings.workbench.iconTheme = "material-icon-theme";
-    userSettings.workbench.colorTheme = "One Dark Pro";
+      workbench = {
+        startupEditor = "none";
+        iconTheme = "material-icon-theme";
+        colorTheme = "One Dark Pro";
+      };
 
-    userSettings.nix.enableLanguageServer = true;
-    userSettings.nix.serverPath = "${pkgs.nil}/bin/nil";
-    userSettings.nix.formatterPath = "${pkgs.alejandra}/bin/alejandra";
-    userSettings.nix.serverSettings.nil.formatting.command = ["alejandra"];
+      nix = {
+        enableLanguageServer = true;
+        serverPath = "${pkgs.nil}/bin/nil";
+        formatterPath = "${pkgs.alejandra}/bin/alejandra";
+        serverSettings.nil.formatting.command = ["alejandra"];
+      };
 
-    userSettings."[haskell]" = {
-      "editor.formatOnSave" = false;
-      "editor.tabSize" = 2;
+      "[haskell]" = {
+        "editor.formatOnSave" = false;
+        "editor.tabSize" = 2;
+      };
     };
   };
 }
