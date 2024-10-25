@@ -13,6 +13,8 @@
       jnoortheen.nix-ide
       haskell.haskell
       justusadam.language-haskell
+
+      james-yu.latex-workshop
     ];
 
     userSettings = {

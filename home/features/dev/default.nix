@@ -6,6 +6,7 @@
     ./gnumake.nix
     ./haskell.nix
     ./kitty.nix
+    ./latex.nix
     ./vscode.nix
     ./zsh.nix
   ];
