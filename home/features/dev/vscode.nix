@@ -48,6 +48,8 @@
         serverSettings.nil.formatting.command = ["alejandra"];
       };
 
+      latex-workshop.formatting.latex = "latexindent";
+
       "[haskell]" = {
         "editor.formatOnSave" = false;
         "editor.tabSize" = 2;

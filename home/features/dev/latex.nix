@@ -1,5 +1,12 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    texliveMedium
+    # (texlive.combine {
+    #   inherit (pkgs.texlive) scheme-medium svg;
+    # })
+    (texlive.withPackages (ps:
+      with ps; [
+        scheme-full
+        svg
+      ]))
   ];
 }
