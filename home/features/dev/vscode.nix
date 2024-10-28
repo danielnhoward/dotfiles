@@ -51,8 +51,11 @@
       latex-workshop.formatting.latex = "latexindent";
 
       "[haskell]" = {
-        "editor.formatOnSave" = false;
-        "editor.tabSize" = 2;
+        editor = {
+          formatOnSave = false;
+          tabSize = 2;
+          rulers = [80];
+        };
       };
     };
   };
