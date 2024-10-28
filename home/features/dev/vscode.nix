@@ -33,6 +33,7 @@
       terminal = {
         explorerKind = "external";
         external.linuxExec = "kitty";
+        integrated.fontFamily = "\"Hack\", \"Symbols Nerd Font Mono\"";
       };
 
       workbench = {

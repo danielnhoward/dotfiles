@@ -1,6 +1,7 @@
 {...}: {
   imports = [
     ./boot.nix
+    ./fonts.nix
     ./gc.nix
     ./hosts.nix
     ./locale.nix
