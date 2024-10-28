@@ -1,5 +1,5 @@
 {pkgs, ...}: {
   fonts.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["Symbols"];})
+    (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
   ];
 }
