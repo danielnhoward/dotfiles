@@ -10,6 +10,8 @@
 
       ms-vsliveshare.vsliveshare
 
+      shardulm94.trailing-spaces
+
       jnoortheen.nix-ide
       haskell.haskell
       justusadam.language-haskell
