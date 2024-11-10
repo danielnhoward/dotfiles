@@ -7,6 +7,7 @@
     ./haskell.nix
     ./java.nix
     ./kitty.nix
+    ./kotlin.nix
     ./latex.nix
     ./vscode.nix
     ./zsh.nix
