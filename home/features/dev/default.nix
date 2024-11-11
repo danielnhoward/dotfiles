@@ -6,6 +6,7 @@
     ./gnumake.nix
     ./haskell.nix
     ./java.nix
+    ./jetbrains.nix
     ./kitty.nix
     ./kotlin.nix
     ./latex.nix
