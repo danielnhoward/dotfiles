@@ -10,6 +10,7 @@
     ./kitty.nix
     ./kotlin.nix
     ./latex.nix
+    ./tools.nix
     ./vscode.nix
     ./zsh.nix
   ];
