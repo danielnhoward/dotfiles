@@ -1,0 +1,5 @@
+{...}: {
+  programs.gnome = {
+    enable = true;
+  };
+}

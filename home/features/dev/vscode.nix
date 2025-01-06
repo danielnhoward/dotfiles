@@ -9,6 +9,7 @@
       zhuangtongfa.material-theme
 
       ms-vsliveshare.vsliveshare
+      tomoki1207.pdf
 
       shardulm94.trailing-spaces
 
@@ -42,6 +43,9 @@
         startupEditor = "none";
         iconTheme = "material-icon-theme";
         colorTheme = "One Dark Pro";
+        editorAssociations = {
+          "*.pdf" = "pdf.preview";
+        };
       };
 
       nix = {
