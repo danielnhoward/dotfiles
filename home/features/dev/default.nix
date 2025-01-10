@@ -11,6 +11,7 @@
     ./kitty.nix
     ./kotlin.nix
     ./latex.nix
+    ./node.nix
     ./parsec.nix
     ./python.nix
     ./tools.nix
