@@ -4,6 +4,7 @@
     ./dbeaver.nix
     ./git.nix
     ./gnumake.nix
+    ./go.nix
     ./haskell.nix
     ./java.nix
     ./jetbrains.nix

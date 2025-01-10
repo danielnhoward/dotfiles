@@ -16,6 +16,8 @@
       jnoortheen.nix-ide
       haskell.haskell
       justusadam.language-haskell
+      ms-python.python
+      golang.go
 
       james-yu.latex-workshop
     ];
