@@ -11,6 +11,7 @@
     ./kotlin.nix
     ./latex.nix
     ./parsec.nix
+    ./python.nix
     ./tools.nix
     ./vscode.nix
     ./zsh.nix

@@ -1,8 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./dev
-    ./gnome
-    # ./plasma
+    ./plasma
     ./virtualisation
     ./web
   ];
