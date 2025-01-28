@@ -11,6 +11,7 @@
 
     shellAliases = {
       update = "sudo nixos-rebuild switch --flake ~/nixos#$HOST";
+      labs = "ssh shell$(printf $[RANDOM%5+1]).doc.ic.ac.uk";
     };
     history = {
       size = 10000;

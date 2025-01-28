@@ -18,13 +18,13 @@
       justusadam.language-haskell
       ms-python.python
       golang.go
+      dbaeumer.vscode-eslint
 
       james-yu.latex-workshop
     ];
 
     userSettings = {
       editor = {
-        formatOnSave = true;
         cursorSmoothCaretAnimation = "on";
         cursorBlinking = "smooth";
         selectionClipboard = false;
@@ -61,9 +61,13 @@
 
       "[haskell]" = {
         editor = {
-          formatOnSave = false;
           tabSize = 2;
           rulers = [80];
+        };
+      };
+      "[nix]" = {
+        editor = {
+          formatOnSave = true;
         };
       };
     };
