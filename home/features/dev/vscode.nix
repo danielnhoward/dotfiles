@@ -19,8 +19,10 @@
       ms-python.python
       golang.go
       dbaeumer.vscode-eslint
+      bradlc.vscode-tailwindcss
 
       james-yu.latex-workshop
+      mechatroner.rainbow-csv
     ];
 
     userSettings = {
