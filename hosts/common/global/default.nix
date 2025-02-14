@@ -28,6 +28,8 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
+  # services.xserver.windowManager.dwm.enable = true;
+
   services.fprintd.enable = true;
 
   programs.zsh.enable = true;
