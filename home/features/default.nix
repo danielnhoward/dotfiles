@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./dev
-    ./dwm
+    # ./dwm
     ./plasma
     ./virtualisation
     ./web

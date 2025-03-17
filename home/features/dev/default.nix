@@ -2,6 +2,7 @@
   imports = [
     ./cloudflared.nix
     ./dbeaver.nix
+    ./ghidra.nix
     ./git.nix
     ./gnumake.nix
     ./go.nix
