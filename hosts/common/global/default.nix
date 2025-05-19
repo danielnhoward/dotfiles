@@ -16,7 +16,7 @@
 
   services.printing.enable = true;
 
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -48,6 +48,9 @@
   programs.nix-index-database.comma.enable = true;
 
   programs.ssh.startAgent = true;
+
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.allowReboot = true;
 
   system.stateVersion = "24.05";
 }
