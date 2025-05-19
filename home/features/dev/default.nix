@@ -1,5 +1,6 @@
 {...}: {
   imports = [
+    ./c.nix
     ./cloudflared.nix
     ./dbeaver.nix
     ./ghidra.nix

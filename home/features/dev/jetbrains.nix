@@ -3,5 +3,6 @@
     (plugins.addPlugins idea-ultimate [
       ])
     gateway
+    clion
   ];
 }
