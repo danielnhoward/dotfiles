@@ -1,6 +1,10 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     gcc
-    # clang
+    clang-tools
+    include-what-you-use
+    cmake
+    gdb
+    libmicrohttpd
   ];
 }

@@ -24,6 +24,11 @@
 
         james-yu.latex-workshop
         mechatroner.rainbow-csv
+
+        ms-vscode.cpptools
+        ms-vscode.cmake-tools
+
+        ms-vscode.hexeditor
       ];
 
       userSettings = {
@@ -69,6 +74,16 @@
           };
         };
         "[nix]" = {
+          editor = {
+            formatOnSave = true;
+          };
+        };
+        "[c]" = {
+          editor = {
+            formatOnSave = true;
+          };
+        };
+        "[h]" = {
           editor = {
             formatOnSave = true;
           };
