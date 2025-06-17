@@ -5,6 +5,5 @@
     include-what-you-use
     cmake
     gdb
-    libmicrohttpd
   ];
 }
