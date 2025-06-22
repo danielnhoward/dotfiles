@@ -7,6 +7,7 @@
     ./git.nix
     ./gnumake.nix
     ./go.nix
+    ./gparted.nix
     ./haskell.nix
     ./java.nix
     ./jetbrains.nix
@@ -16,7 +17,6 @@
     ./node.nix
     ./parsec.nix
     ./python.nix
-    ./rpi.nix
     ./tmux.nix
     ./tools.nix
     ./vscode.nix
