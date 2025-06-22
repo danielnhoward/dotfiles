@@ -16,6 +16,7 @@
     ./node.nix
     ./parsec.nix
     ./python.nix
+    ./rpi.nix
     ./tmux.nix
     ./tools.nix
     ./vscode.nix
