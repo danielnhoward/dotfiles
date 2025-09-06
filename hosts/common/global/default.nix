@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   imports = [
     ./boot.nix
     ./fonts.nix
@@ -11,6 +11,7 @@
   nixpkgs.config.allowUnfree = true;
 
   networking.networkmanager.enable = true;
+  # networking.firewall.allowedTCPPorts = [3000 5000];
 
   console.keyMap = "uk";
 
@@ -25,10 +26,14 @@
     pulse.enable = true;
   };
 
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  # services.displayManager.sddm.enable = true;
+  # services.desktopManager.plasma6.enable = true;
 
-  # services.xserver.windowManager.dwm.enable = true;
+  programs.dconf.enable = true;
+  services.xserver.windowManager.dwm.package = pkgs.dwm.override {
+    conf = ./config.def.h;
+  };
+  services.xserver.windowManager.dwm.enable = true;
 
   services.fprintd.enable = true;
 
