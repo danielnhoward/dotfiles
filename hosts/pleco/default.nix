@@ -6,6 +6,7 @@
   imports = [
     ./hardware-configuration.nix
     ./../common/global
+    ./../common/dwm
     ./../common/users/dnh
   ];
 
