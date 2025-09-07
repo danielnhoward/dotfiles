@@ -30,10 +30,6 @@
   # services.desktopManager.plasma6.enable = true;
 
   programs.dconf.enable = true;
-  services.xserver.windowManager.dwm.package = pkgs.dwm.override {
-    conf = ./config.def.h;
-  };
-  services.xserver.windowManager.dwm.enable = true;
 
   services.fprintd.enable = true;
 
