@@ -63,13 +63,16 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *rofidruncmd[] = { "rofi", "-display", dmenumon, "-show", "drun", "-config", "/etc/rofi/config.rasi", NULL };
+static const char *rofiruncmd[] = { "rofi", "-display", dmenumon, "-show", "run", "-config", "/etc/rofi/config.rasi", NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *brupcmd[] = { "brightnessctl", "set", "10%+", NULL };
 static const char *brdowncmd[] = { "brightnessctl", "set", "10%-", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key                       function        argument */
-	{ MODKEY,                       XK_p,                     spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_p,                     spawn,          {.v = rofidruncmd } },
+	{ MODKEY|ShiftMask,             XK_p,                     spawn,          {.v = rofiruncmd } },
 	{ MODKEY|ShiftMask,             XK_Return,                spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,                     togglebar,      {0} },
 	{ MODKEY,                       XK_j,                     focusstack,     {.i = +1 } },

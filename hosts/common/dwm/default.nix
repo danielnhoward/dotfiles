@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./polybar
+    ./rasi
   ];
 
   services.xserver.windowManager.dwm = {
@@ -29,7 +30,7 @@
       ];
     })
     rofi
-    dmenu-bluetooth
+    rofi-bluetooth
     brightnessctl
     polybar
   ];
