@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./polybar
-    ./rasi
+    ./rofi
   ];
 
   services.xserver.windowManager.dwm = {
