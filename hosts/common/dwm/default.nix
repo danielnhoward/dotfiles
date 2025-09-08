@@ -18,10 +18,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    rofi
-    rofi-bluetooth
     brightnessctl
-    polybar
     slock
   ];
   security.wrappers.slock = {
