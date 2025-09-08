@@ -38,7 +38,7 @@ inputbar {
 
 icon-search {
     expand:     false;
-    filename:   "search";
+    filename:   "/etc/rofi/search.svg";
     size: 28px;
 }
 
