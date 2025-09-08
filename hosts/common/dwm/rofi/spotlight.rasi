@@ -1,5 +1,6 @@
 /* MACOS SPOTLIGHT LIKE DARK THEME FOR ROFI  */
 /* Author: Newman Sanchez (https://github.com/newmanls) */
+/* Source: https://github.com/newmanls/rofi-themes-collection/blob/master/themes/spotlight.rasi */
 
 * {
     font:   "Montserrat 12";

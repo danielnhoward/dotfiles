@@ -8,6 +8,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int usealtbar          = 1;          /* 1 means use non-dwm status bar */
 static const char *altbarclass      = "Polybar";  /* Alternate bar class name */
+static const char *alttrayname      = "tray";    /* Polybar tray instance name */
 static const char *altbarcmd        = "/etc/polybar/run.sh"; /* Alternate bar launch command */
 static const char *fonts[]          = { "monospace:size=15" };
 static const char dmenufont[]       = "monospace:size=15";
@@ -63,11 +64,12 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *rofidruncmd[] = { "rofi", "-show", "drun", "-config", "/etc/rofi/config.rasi", NULL };
+static const char *rofidruncmd[] = { "rofi", "-show", "drun", "-config", "/etc/rofi/config.rasi", "-show-icons", NULL };
 static const char *rofiruncmd[] = { "rofi", "-show", "run", "-config", "/etc/rofi/config.rasi", NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *brupcmd[] = { "brightnessctl", "set", "10%+", NULL };
 static const char *brdowncmd[] = { "brightnessctl", "set", "10%-", NULL };
+static const char *slockcmd[] = { "slock", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key                       function        argument */
@@ -107,6 +109,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,                     quit,           {0} },
 	{ 0,                            XF86XK_MonBrightnessUp,   spawn,          {.v = brupcmd} },
     { 0,                            XF86XK_MonBrightnessDown, spawn,          {.v = brdowncmd} },
+    { Mod4Mask,                     XK_l,                     spawn,          {.v = slockcmd} },
 
 };
 
