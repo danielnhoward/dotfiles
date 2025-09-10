@@ -1,3 +1,3 @@
 {...}: {
-  services.xserver.displayManager.lightdm.background = ./dune-l.svg;
+  services.xserver.displayManager.lightdm.background = ./YorkshireHay.jpg;
 }
