@@ -29,6 +29,10 @@
         ms-vscode.cmake-tools
 
         ms-vscode.hexeditor
+
+        yzane.markdown-pdf
+
+        mathworks.language-matlab
       ];
 
       userSettings = {
