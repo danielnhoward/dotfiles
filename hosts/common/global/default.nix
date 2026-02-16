@@ -11,7 +11,7 @@
   nixpkgs.config.allowUnfree = true;
 
   networking.networkmanager.enable = true;
-  # networking.firewall.allowedTCPPorts = [3000 5000];
+  networking.firewall.allowedTCPPorts = [3000];
 
   console.keyMap = "uk";
 
@@ -28,8 +28,8 @@
     pulseaudio
   ];
 
-  # services.displayManager.sddm.enable = true;
-  # services.desktopManager.plasma6.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   programs.dconf.enable = true;
 
@@ -55,5 +55,5 @@
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
 
-  system.stateVersion = "24.05";
+  system.stateVersion = "25.11";
 }

@@ -1,5 +1,10 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    scala
+    scala-next
+    scala-cli
+    metals
+    coursier
+    sbt
+    scalafmt
   ];
 }

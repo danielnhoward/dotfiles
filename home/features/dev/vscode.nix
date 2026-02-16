@@ -6,6 +6,9 @@
       enableUpdateCheck = false;
 
       extensions = with pkgs.vscode-extensions; [
+        scala-lang.scala
+        scalameta.metals
+
         pkief.material-icon-theme
         zhuangtongfa.material-theme
 
@@ -68,6 +71,11 @@
         };
 
         latex-workshop.formatting.latex = "latexindent";
+
+        "files.watcherExclude" = {
+          "**/.bloop" = true;
+          "**/.metals" = true;
+        };
 
         "[haskell]" = {
           editor = {

@@ -22,6 +22,7 @@
     ./tmux.nix
     ./tools.nix
     ./vscode.nix
+    ./wireshark.nix
     ./zsh.nix
   ];
 }
